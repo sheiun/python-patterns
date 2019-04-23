@@ -1,26 +1,33 @@
 python-patterns
 ===============
 
-A collection of design patterns and idioms in Python.
+Python 中一系列的設計模式和慣用語。
 
-Current Patterns
+關於此項目
 ----------------
 
-__Creational Patterns__:
+此項目 Fork 自 [faif/python-patterns](https://github.com/faif/python-patterns) 。  
+主要的目的是做*繁體中文*的翻譯，不接受任何程式碼的修改，僅接受英文敘述變更，若有任何關於程式碼的疑問，請移駕至來源專案。  
+因貢獻方式不同，此項目的 README 將貢獻以下的欄位全數刪除，
 
-| Pattern | Description |
+目前模式
+----------------
+
+__創建型模式__:
+
+|   模式   |     描述    |
 |:-------:| ----------- |
-| [abstract_factory](patterns/creational/abstract_factory.py) | use a generic function with specific factories |
-| [borg](patterns/creational/borg.py) | a singleton with shared-state among instances |
+| [abstract_factory](patterns/creational/abstract_factory.py) | 使用特定工廠的通用函數 |
+| [borg](patterns/creational/borg.py) | 實例中具有共享狀態的單例 |
 | [builder](patterns/creational/builder.py) | instead of using multiple constructors, builder object receives parameters and returns constructed objects |
 | [factory](patterns/creational/factory.py) | delegate a specialized function/method to create instances |
 | [lazy_evaluation](patterns/creational/lazy_evaluation.py) | lazily-evaluated property pattern in Python |
 | [pool](patterns/creational/pool.py) | preinstantiate and maintain a group of instances of the same type |
 | [prototype](patterns/creational/prototype.py) | use a factory and clones of a prototype for new instances (if instantiation is expensive) |
 
-__Structural Patterns__:
+__結構型模式__:
 
-| Pattern | Description |
+|   模式   |     描述    |
 |:-------:| ----------- |
 | [3-tier](patterns/structural/3-tier.py) | data<->business logic<->presentation separation (strict relationships) |
 | [adapter](patterns/structural/adapter.py) | adapt one interface to another using a white-list |
@@ -33,9 +40,9 @@ __Structural Patterns__:
 | [mvc](patterns/structural/mvc.py) | model<->view<->controller (non-strict relationships) |
 | [proxy](patterns/structural/proxy.py) | an object funnels operations to something else |
 
-__Behavioral Patterns__:
+__行為型模式__:
 
-| Pattern | Description |
+|   模式   |     描述    |
 |:-------:| ----------- |
 | [chain_of_responsibility](patterns/behavioral/chain_of_responsibility__py3.py) | apply a chain of successive handlers to try and process the data |
 | [catalog](patterns/behavioral/catalog.py) | general methods will call different specialized methods based on construction parameter |
@@ -53,28 +60,28 @@ __Behavioral Patterns__:
 | [template](patterns/behavioral/template.py) | an object imposes a structure but takes pluggable components |
 | [visitor](patterns/behavioral/visitor.py) | invoke a callback for all items of a collection |
 
-__Design for Testability Patterns__:
+__可測試性設計模式__:
 
-| Pattern | Description |
+|   模式   |     描述    |
 |:-------:| ----------- |
-| [dependency_injection](patterns/dependency_injection.py) | 3 variants of dependency injection |
+| [dependency_injection](patterns/dependency_injection.py) | 依賴注入的 3 種變體 |
 
-__Fundamental Patterns__:
+__基本型模式__:
 
-| Pattern | Description |
+|   模式   |     描述    |
 |:-------:| ----------- |
 | [delegation_pattern](patterns/fundamental/delegation_pattern.py) | an object handles a request by delegating to a second object (the delegate) |
 
-__Others__:
+__其它__:
 
-| Pattern | Description |
+|   模式   |     描述    |
 |:-------:| ----------- |
 | [blackboard](patterns/other/blackboard__py3.py) | architectural model, assemble different sub-system knowledge to build a solution, AI approach - non gang of four pattern |
 | [graph_search](patterns/other/graph_search.py) | graphing algorithms - non gang of four pattern |
 | [hsm](patterns/other/hsm/hsm.py) | hierarchical state machine - non gang of four pattern |
 
 
-Videos
+影片
 ------
 [Design Patterns in Python by Peter Ullrich](https://www.youtube.com/watch?v=bsyjSW46TDg)
 
@@ -85,38 +92,6 @@ Videos
 [Pluggable Libs Through Design Patterns](https://www.youtube.com/watch?v=PfgEU3W0kyU)
 
 
-Contributing
+貢獻
 ------------
-When an implementation is added or modified, please review the following guidelines:
-
-##### Output
-All files with example patterns have `### OUTPUT ###` section at the bottom 
-(migration to OUTPUT = """...""" is in progress).
-
-Run `append_output.sh` (e.g. `./append_output.sh borg.py`) to generate/update it.
-
-##### Docstrings
-Add module level description in form of a docstring with links to corresponding references or other useful information.
-
-Add "Examples in Python ecosystem" section if you know some. It shows how patterns could be applied to real-world problems.
-
-[facade.py](patterns/structural/facade.py) has a good example of detailed description,
-but sometimes the shorter one as in [template.py](patterns/behavioral/template.py) would suffice.
-
-In some cases class-level docstring with doctest would also help (see [adapter.py](patterns/structural/adapter.py))
-but readable OUTPUT section is much better.
-
-
-##### Python2/3 compatibility
-Try to keep it (discussion is held in [issue #208](https://github.com/faif/python-patterns/issues/208))
-- use new style classes (inherit from `object`)
-- use `from __future__ import print_function`
-
-##### Update README
-When everything else is done - update corresponding part of README.
-
-
-##### Travis CI
-Please run `tox` or `tox -e ci37` before submitting a patch to be sure your changes will pass CI.
-
-You can also run `flake8` or `pytest` commands manually. Examples can be found in `tox.ini`.
+請參閱來源項目

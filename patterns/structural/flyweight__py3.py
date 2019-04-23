@@ -2,30 +2,26 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
-This pattern aims to minimise the number of objects that are needed by
-a program at run-time. A Flyweight is an object shared by multiple
-contexts, and is indistinguishable from an object that is not shared.
+*這種模式是什麼？
+此模式旨在最小化程式在運行時所需的物件數。
+Flyweight 是由多個上下文共享的物件，與未共享的物件無法區分。
 
-The state of a Flyweight should not be affected by it's context, this
-is known as its intrinsic state. The decoupling of the objects state
-from the object's context, allows the Flyweight to be shared.
+Flyweight 的狀態不應受其上下文的影響，這被稱為其內在狀態。
+將物件狀態與物件的上下文分離，允許共享 Flyweight。
 
-*What does this example do?
-The example below sets-up an 'object pool' which stores initialised
-objects. When a 'Card' is created it first checks to see if it already
-exists instead of creating a new one. This aims to reduce the number of
-objects initialised by the program.
+*這個例子做了什麼？
+下面的範例設置一個存儲初始化的 'Card Pool' 物件。 當創建 'Card' 時，
+它首先檢查它是否已經存在而不是創建一個新的 Card。 這旨在減少程式初始化的物件數量。
 
-*References:
+*參考：
 http://codesnipers.com/?q=python-flyweights
 https://python-patterns.guide/gang-of-four/flyweight/
 
-*Examples in Python ecosystem:
+*Python 生態系統中的範例:
 https://docs.python.org/3/library/sys.html#sys.intern
 
 *TL;DR80
-Minimizes memory usage by sharing data with other similar objects.
+通過與其他類似物件共享資料來最大限度地減少記憶體使用。
 """
 
 import weakref
@@ -34,24 +30,24 @@ import weakref
 class Card(object):
     """The Flyweight"""
 
-    # Could be a simple dict.
-    # With WeakValueDictionary garbage collection can reclaim the object
-    # when there are no other references to it.
+    # 可能是一個簡單的字典。
+    # 使用 WeakValueDictionary 垃圾蒐集可以回收對象
+    # 當沒有其他參考時。
     _pool = weakref.WeakValueDictionary()
 
     def __new__(cls, value, suit):
-        # If the object exists in the pool - just return it
+        # 如果物件存在於池中 - 只需返回它
         obj = cls._pool.get(value + suit)
-        # otherwise - create new one (and add it to the pool)
+        # 否則 - 創建一個（並將其添加到池中）
         if obj is None:
             obj = object.__new__(Card)
             cls._pool[value + suit] = obj
-            # This row does the part we usually see in `__init__`
+            # 這行是我們通常在 `__init__` 中看到的部分
             obj.value, obj.suit = value, suit
         return obj
 
-    # If you uncomment `__init__` and comment-out `__new__` -
-    #   Card becomes normal (non-flyweight).
+    # 如果取消註解 `__init__` 並註解掉 `__new__` -
+    #   Card 變得正常 (non-flyweight).
     # def __init__(self, value, suit):
     #     self.value, self.suit = value, suit
 

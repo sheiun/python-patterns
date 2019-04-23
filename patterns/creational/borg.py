@@ -2,42 +2,32 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
-The Borg pattern (also known as the Monostate pattern) is a way to
-implement singleton behavior, but instead of having only one instance
-of a class, there are multiple instances that share the same state. In
-other words, the focus is on sharing state instead of sharing instance
-identity.
+*這種模式是什麼？
+博格模式（Borg pattern）（也被稱為 Monostate pattern）是一種實現單例行為的方法，
+但是不是只有一個類的實例，而是有多個實例共享相同的狀態。換句話說，
+重點是共享狀態而不是共享實例標識。
 
-*What does this example do?
-To understand the implementation of this pattern in Python, it is
-important to know that, in Python, instance attributes are stored in a
-attribute dictionary called __dict__. Usually, each instance will have
-its own dictionary, but the Borg pattern modifies this so that all
-instances have the same dictionary.
-In this example, the __shared_state attribute will be the dictionary
-shared between all instances, and this is ensured by assigining
-__shared_state to the __dict__ variable when initializing a new
-instance (i.e., in the __init__ method). Other attributes are usually
-added to the instance's attribute dictionary, but, since the attribute
-dictionary itself is shared (which is __shared_state), all other
-attributes will also be shared.
-For this reason, when the attribute self.state is modified using
-instance rm2, the value of self.state in instance rm1 also changes. The
-same happens if self.state is modified using rm3, which is an
-instance from a subclass.
-Notice that even though they share attributes, the instances are not
-the same, as seen by their ids.
+*這個例子做了什麼？
+要理解 Python 中此模式的實現，重要的是要知道，在 Python 中，
+實例屬性存儲在名為 __dict__ 的屬性字典中。 通常，每個實例都有自己的字典，
+但博格模式會修改它，以便所有實例都具有相同的字典。
+在此範例中，__shared_state 屬性將是在所有實例之間共享的字典，
+並且通過在初始化新實例時（即在 __init__ 方法中）
+將 __shared_state 賦值給 __dict__ 變數來確保這一點。其他屬性通常會添加到實例的屬性字典中，
+但是，由於屬性字典本身是共享的（即 __shared_state），因此所有其他屬性也將被共享。
+因此，當使用實例 rm2 修改屬性 self.state 時，實例 rm1 中 self.state 的值也會更改。
+如果使用 rm3 修改 self.state，則會發生同樣的情況，rm3 是子類別中的實例。
+請注意，即使它們共享屬性，實例也不同，如其 ID 所示。
 
-*Where is the pattern used practically?
-Sharing state is useful in applications like managing database connections:
+*該模式實際使用在哪裡？
+共享狀態在管理資料庫連接等應用程式中很有用：
 https://github.com/onetwopunch/pythonDbTemplate/blob/master/database.py
 
-*References:
+*參考：
 https://fkromer.github.io/python-pattern-references/design/#singleton
 
 *TL;DR80
-Provides singleton-like behavior sharing state between instances.
+在實例之間提供類似單一行為的行為共享狀態。
 """
 
 

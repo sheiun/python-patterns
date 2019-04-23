@@ -26,7 +26,7 @@ from __future__ import print_function
 
 
 class TextTag(object):
-    """Represents a base text tag"""
+    """ 表示基本文字標記 """
 
     def __init__(self, text):
         self._text = text
@@ -36,7 +36,7 @@ class TextTag(object):
 
 
 class BoldWrapper(TextTag):
-    """Wraps a tag in <b>"""
+    """ 包裝一個標記在 <b> 內 """
 
     def __init__(self, wrapped):
         self._wrapped = wrapped
@@ -46,7 +46,7 @@ class BoldWrapper(TextTag):
 
 
 class ItalicWrapper(TextTag):
-    """Wraps a tag in <i>"""
+    """ 包中一個標記在 <i> 內 """
 
     def __init__(self, wrapped):
         self._wrapped = wrapped

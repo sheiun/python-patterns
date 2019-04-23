@@ -36,7 +36,7 @@ class Card(object):
     _pool = weakref.WeakValueDictionary()
 
     def __new__(cls, value, suit):
-        # 如果物件存在於池中 - 只需返回它
+        # 如果物件存在於池中 - 只需回傳它
         obj = cls._pool.get(value + suit)
         # 否則 - 創建一個（並將其添加到池中）
         if obj is None:

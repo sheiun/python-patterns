@@ -3,7 +3,7 @@
 
 """
 *TL;DR80
-Separates data in GUIs from the ways it is presented, and accepted.
+將 GUIs 中的資料與其呈現和接受的方式分開。
 """
 
 
@@ -12,8 +12,9 @@ class Model(object):
         raise NotImplementedError
 
     def get(self, item):
-        """Returns an object with a .items() call method
-        that iterates over key,value pairs of its information."""
+        """回傳一個帶有 .items() 調用方法的物件
+        ，該方法迭代其資訊的鍵值對。"""
+        
         raise NotImplementedError
 
     @property
@@ -23,8 +24,7 @@ class Model(object):
 
 class ProductModel(Model):
     class Price(float):
-        """A polymorphic way to pass a float with a particular
-        __str__ functionality."""
+        """一種多形方式用來具有特定 __str__ 功能的浮點數。"""
 
         def __str__(self):
             return "{:.2f}".format(self)
@@ -53,8 +53,7 @@ class View(object):
         raise NotImplementedError
 
     def show_item_information(self, item_type, item_name, item_info):
-        """Will look for item information by iterating over key,value pairs
-        yielded by item_info.items()"""
+        """將通過迭代 item_info.items() 產生的鍵值對來查找項目資訊。"""
         raise NotImplementedError
 
     def item_not_found(self, item_type, item_name):

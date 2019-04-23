@@ -3,7 +3,7 @@
 
 """
 *TL;DR80
-Provides an interface to resource that is expensive to duplicate.
+提供資源介面由於複製很昂貴.
 """
 
 from __future__ import print_function

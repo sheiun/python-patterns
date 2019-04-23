@@ -1,14 +1,14 @@
-python-patterns
+python-patterns-chinese-traditional
 ===============
 
 Python 中一系列的設計模式和慣用語。
 
-關於此項目
+關於此專案
 ----------------
 
-此項目 Fork 自 [faif/python-patterns](https://github.com/faif/python-patterns) 。  
+此專案 Fork 自 [faif/python-patterns](https://github.com/faif/python-patterns) 。  
 主要的目的是做*繁體中文*的翻譯，不接受任何程式碼的修改，僅接受英文敘述變更，若有任何關於程式碼的疑問，請移駕至來源專案。  
-因貢獻方式不同，此項目的 README 將貢獻以下的欄位全數刪除，
+因貢獻方式不同，此專案的 README 將貢獻以下的欄位全數刪除，
 
 目前模式
 ----------------
@@ -19,46 +19,46 @@ __創建型模式__:
 |:-------:| ----------- |
 | [abstract_factory](patterns/creational/abstract_factory.py) | 使用特定工廠的通用函數 |
 | [borg](patterns/creational/borg.py) | 實例中具有共享狀態的單例 |
-| [builder](patterns/creational/builder.py) | instead of using multiple constructors, builder object receives parameters and returns constructed objects |
-| [factory](patterns/creational/factory.py) | delegate a specialized function/method to create instances |
-| [lazy_evaluation](patterns/creational/lazy_evaluation.py) | lazily-evaluated property pattern in Python |
-| [pool](patterns/creational/pool.py) | preinstantiate and maintain a group of instances of the same type |
-| [prototype](patterns/creational/prototype.py) | use a factory and clones of a prototype for new instances (if instantiation is expensive) |
+| [builder](patterns/creational/builder.py) | 用建構器物件接收參數並返回建構的物件，代替使用多個建構子 |
+| [factory](patterns/creational/factory.py) | 委託專門的函數／方法來創建實例 |
+| [lazy_evaluation](patterns/creational/lazy_evaluation.py) | Python 中延遲評估的屬性模式 |
+| [pool](patterns/creational/pool.py) | 預先實例化並維護一組相同類型的實例 |
+| [prototype](patterns/creational/prototype.py) | 使用工廠和原型的克隆用於新實例（如果實例化是昂貴的） |
 
 __結構型模式__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [3-tier](patterns/structural/3-tier.py) | data<->business logic<->presentation separation (strict relationships) |
-| [adapter](patterns/structural/adapter.py) | adapt one interface to another using a white-list |
-| [bridge](patterns/structural/bridge.py) | a client-provider middleman to soften interface changes |
-| [composite](patterns/structural/composite.py) | lets clients treat individual objects and compositions uniformly |
-| [decorator](patterns/structural/decorator.py) | wrap functionality with other functionality in order to affect outputs |
-| [facade](patterns/structural/facade.py) | use one class as an API to a number of others |
-| [flyweight](patterns/structural/flyweight__py3.py) | transparently reuse existing instances of objects with similar/identical state |
-| [front_controller](patterns/structural/front_controller.py) | single handler requests coming to the application |
-| [mvc](patterns/structural/mvc.py) | model<->view<->controller (non-strict relationships) |
-| [proxy](patterns/structural/proxy.py) | an object funnels operations to something else |
+| [3-tier](patterns/structural/3-tier.py) | 資料<->商業邏輯<->介紹分離（嚴格的關係）|
+| [adapter](patterns/structural/adapter.py) | 使用白名單將一個介面調整到另一個介面 |
+| [bridge](patterns/structural/bridge.py) | 客戶端提供商中間人，以軟化介面變更 |
+| [composite](patterns/structural/composite.py) | 讓客戶均勻對待個別物件和組合 |
+| [decorator](patterns/structural/decorator.py) | 使用其它功能包裝功能以影響輸出 |
+| [facade](patterns/structural/facade.py) | 使用一個類別作為許多其他類的 API |
+| [flyweight](patterns/structural/flyweight__py3.py) | 透明地重用具有相似／相同狀態物件的存在實例 |
+| [front_controller](patterns/structural/front_controller.py) | 單一處理程式請求進入應用程式 |
+| [mvc](patterns/structural/mvc.py) | 模型<->視圖<->控制器（非嚴格關係） |
+| [proxy](patterns/structural/proxy.py) | 一個物件將操作導引到其它東西 |
 
 __行為型模式__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [chain_of_responsibility](patterns/behavioral/chain_of_responsibility__py3.py) | apply a chain of successive handlers to try and process the data |
-| [catalog](patterns/behavioral/catalog.py) | general methods will call different specialized methods based on construction parameter |
-| [chaining_method](patterns/behavioral/chaining_method.py) | continue callback next object method |
-| [command](patterns/behavioral/command.py) | bundle a command and arguments to call later |
-| [iterator](patterns/behavioral/iterator.py) | traverse a container and access the container's elements |
-| [mediator](patterns/behavioral/mediator.py) | an object that knows how to connect other objects and act as a proxy |
-| [memento](patterns/behavioral/memento.py) | generate an opaque token that can be used to go back to a previous state |
-| [observer](patterns/behavioral/observer.py) | provide a callback for notification of events/changes to data |
-| [publish_subscribe](patterns/behavioral/publish_subscribe.py) | a source syndicates events/data to 0+ registered listeners |
-| [registry](patterns/behavioral/registry__py3.py) | keep track of all subclasses of a given class |
-| [specification](patterns/behavioral/specification.py) |  business rules can be recombined by chaining the business rules together using boolean logic |
-| [state](patterns/behavioral/state.py) | logic is organized into a discrete number of potential states and the next state that can be transitioned to |
-| [strategy](patterns/behavioral/strategy.py) | selectable operations over the same data |
-| [template](patterns/behavioral/template.py) | an object imposes a structure but takes pluggable components |
-| [visitor](patterns/behavioral/visitor.py) | invoke a callback for all items of a collection |
+| [chain_of_responsibility](patterns/behavioral/chain_of_responsibility__py3.py) | 應用一系列連續的處理程序來嘗試和處理數據 |
+| [catalog](patterns/behavioral/catalog.py) | 一般方法會根據建構參數調用不同的專用方法 |
+| [chaining_method](patterns/behavioral/chaining_method.py) | 繼續回調下一個物件方法 |
+| [command](patterns/behavioral/command.py) | 捆綁命令和參數以便稍後調用 |
+| [iterator](patterns/behavioral/iterator.py) | 遍歷容器並訪問容器的元素 |
+| [mediator](patterns/behavioral/mediator.py) | 一個知道如何連接其他物件並充當代理的物件 |
+| [memento](patterns/behavioral/memento.py) | 生成一個可用於返回先前狀態的不透明令牌 |
+| [observer](patterns/behavioral/observer.py) | 提供回調給資料的事件／變更通知 |
+| [publish_subscribe](patterns/behavioral/publish_subscribe.py) | 一個來源將事件／資料聯合到註冊的監聽器 |
+| [registry](patterns/behavioral/registry__py3.py) | 持續追蹤給定類別的所有子類別 |
+| [specification](patterns/behavioral/specification.py) | 可以通過使用布林邏輯將商業規則鏈接在一起來重新組合商業規則 |
+| [state](patterns/behavioral/state.py) | 邏輯被組織成離散數量的潛在狀態和可以轉換到的下一個狀態 |
+| [strategy](patterns/behavioral/strategy.py) | 對同一資料的可選操作 |
+| [template](patterns/behavioral/template.py) | 一個物件強加一個結構，但用可插入的組件 |
+| [visitor](patterns/behavioral/visitor.py) | 為集合的所有物品調用回調 |
 
 __可測試性設計模式__:
 
@@ -70,15 +70,15 @@ __基本型模式__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [delegation_pattern](patterns/fundamental/delegation_pattern.py) | an object handles a request by delegating to a second object (the delegate) |
+| [delegation_pattern](patterns/fundamental/delegation_pattern.py) | 物件通過委託給第二個物件（代表）來處理請求 |
 
 __其它__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [blackboard](patterns/other/blackboard__py3.py) | architectural model, assemble different sub-system knowledge to build a solution, AI approach - non gang of four pattern |
-| [graph_search](patterns/other/graph_search.py) | graphing algorithms - non gang of four pattern |
-| [hsm](patterns/other/hsm/hsm.py) | hierarchical state machine - non gang of four pattern |
+| [blackboard](patterns/other/blackboard__py3.py) | 建築模型，匯集不同子系統的知識，建構解決方案，AI 方法 - 非四人幫設計模式 |
+| [graph_search](patterns/other/graph_search.py) | 圖形演算法 - 非四人幫設計模式 |
+| [hsm](patterns/other/hsm/hsm.py) | 分層狀態機 - 非四人幫設計模式 |
 
 
 影片
@@ -94,4 +94,4 @@ __其它__:
 
 貢獻
 ------------
-請參閱來源項目
+請參閱來源專案

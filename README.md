@@ -19,7 +19,7 @@ __創建型模式__:
 |:-------:| ----------- |
 | [abstract_factory](patterns/creational/abstract_factory.py) | 使用特定工廠的通用函數 |
 | [borg](patterns/creational/borg.py) | 實例中具有共享狀態的單例 |
-| [builder](patterns/creational/builder.py) | 用建構器物件接收參數並返回建構的物件，代替使用多個建構子 |
+| [builder](patterns/creational/builder.py) | 用建構器物件接收參數並回傳建構的物件，代替使用多個建構子 |
 | [factory](patterns/creational/factory.py) | 委託專門的函數／方法來創建實例 |
 | [lazy_evaluation](patterns/creational/lazy_evaluation.py) | Python 中延遲評估的屬性模式 |
 | [pool](patterns/creational/pool.py) | 預先實例化並維護一組相同類型的實例 |
@@ -50,7 +50,7 @@ __行為型模式__:
 | [command](patterns/behavioral/command.py) | 捆綁命令和參數以便稍後調用 |
 | [iterator](patterns/behavioral/iterator.py) | 遍歷容器並訪問容器的元素 |
 | [mediator](patterns/behavioral/mediator.py) | 一個知道如何連接其他物件並充當代理的物件 |
-| [memento](patterns/behavioral/memento.py) | 生成一個可用於返回先前狀態的不透明令牌 |
+| [memento](patterns/behavioral/memento.py) | 生成一個可用於回傳先前狀態的不透明令牌 |
 | [observer](patterns/behavioral/observer.py) | 提供回調給資料的事件／變更通知 |
 | [publish_subscribe](patterns/behavioral/publish_subscribe.py) | 一個來源將事件／資料聯合到註冊的監聽器 |
 | [registry](patterns/behavioral/registry__py3.py) | 持續追蹤給定類別的所有子類別 |

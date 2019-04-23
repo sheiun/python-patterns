@@ -5,7 +5,7 @@
 @author: Gordeev Andrey <gordeev.and.and@gmail.com>
 
 *TL;DR80
-Provides a centralized entry point that controls and manages request handling.
+提供控制和管理請求處理的集中入口點。
 """
 
 
@@ -34,7 +34,7 @@ class Dispatcher(object):
 
 
 class RequestController(object):
-    """ front controller """
+    """ 前控制器 """
 
     def __init__(self):
         self.dispatcher = Dispatcher()
@@ -47,7 +47,7 @@ class RequestController(object):
 
 
 class Request(object):
-    """ request """
+    """ 請求 """
 
     mobile_type = 'mobile'
     tablet_type = 'tablet'

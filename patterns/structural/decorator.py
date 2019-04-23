@@ -2,29 +2,24 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
-The Decorator pattern is used to dynamically add a new feature to an
-object without changing its implementation. It differs from
-inheritance because the new feature is added only to that particular
-object, not to the entire subclass.
+*這種模式是什麼？
+Decorator 模式用於動態地向物件添加新功能而不變更其實現。
+它與繼承不同，因為新功能僅添加到該特定物件，而不是整個子類別。
 
-*What does this example do?
-This example shows a way to add formatting options (boldface and
-italic) to a text by appending the corresponding tags (<b> and
-<i>). Also, we can see that decorators can be applied one after the other,
-since the original text is passed to the bold wrapper, which in turn
-is passed to the italic wrapper.
+*這個例子做了什麼？
+此範例展示了通過附加相應的標記（<b> 和 <i>）向文字添加格式選項（粗體和斜體）的方法。
+此外，我們可以看到裝飾器可以一個接一個地應用，因為原始文字被傳遞給粗體包裝器，
+而粗體包裝器又傳遞給斜體包裝器。
 
-*Where is the pattern used practically?
-The Grok framework uses decorators to add functionalities to methods,
-like permissions or subscription to an event:
+*該模式實際使用在哪裡？
+Grok 框架使用裝飾器為方法添加功能，例如權限或訂閱事件：
 http://grok.zope.org/doc/current/reference/decorators.html
 
-*References:
+*參考：
 https://sourcemaking.com/design_patterns/decorator
 
 *TL;DR80
-Adds behaviour to object without affecting its class.
+向物件添加行為而不影響其類別。
 """
 
 from __future__ import print_function

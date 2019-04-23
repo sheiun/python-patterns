@@ -29,7 +29,7 @@ __結構型模式__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [3-tier](patterns/structural/3-tier.py) | 資料<->商業邏輯<->介紹分離（嚴格的關係）|
+| [3-tier](patterns/structural/3-tier.py) | 資料<->商業邏輯<->演示分離（嚴格的關係）|
 | [adapter](patterns/structural/adapter.py) | 使用白名單將一個介面調整到另一個介面 |
 | [bridge](patterns/structural/bridge.py) | 客戶端提供商中間人，以軟化介面變更 |
 | [composite](patterns/structural/composite.py) | 讓客戶均勻對待個別物件和組合 |

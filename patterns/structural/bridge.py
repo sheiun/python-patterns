@@ -2,27 +2,27 @@
 # -*- coding: utf-8 -*-
 
 """
-*References:
+*參考：
 http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python
 
 *TL;DR80
-Decouples an abstraction from its implementation.
+將抽象從其實現抽離。
 """
 
 
-# ConcreteImplementor 1/2
+# 具體實現者 1/2
 class DrawingAPI1(object):
     def draw_circle(self, x, y, radius):
         print('API1.circle at {}:{} radius {}'.format(x, y, radius))
 
 
-# ConcreteImplementor 2/2
+# 具體實現者 2/2
 class DrawingAPI2(object):
     def draw_circle(self, x, y, radius):
         print('API2.circle at {}:{} radius {}'.format(x, y, radius))
 
 
-# Refined Abstraction
+# 精緻抽象化
 class CircleShape(object):
     def __init__(self, x, y, radius, drawing_api):
         self._x = x
@@ -30,11 +30,11 @@ class CircleShape(object):
         self._radius = radius
         self._drawing_api = drawing_api
 
-    # low-level i.e. Implementation specific
+    # 低級別，即具體實現
     def draw(self):
         self._drawing_api.draw_circle(self._x, self._y, self._radius)
 
-    # high-level i.e. Abstraction specific
+    # 高級別，即抽象化特定
     def scale(self, pct):
         self._radius *= pct
 

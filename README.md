@@ -29,7 +29,7 @@ __結構型模式__:
 
 |   模式   |     描述    |
 |:-------:| ----------- |
-| [3-tier](patterns/structural/3-tier.py) | 資料<->商業邏輯<->演示分離（嚴格的關係）|
+| [3-tier](patterns/structural/3-tier.py) | 資料<->商業邏輯<->演示分離（嚴謹的關係）|
 | [adapter](patterns/structural/adapter.py) | 使用白名單將一個介面調整到另一個介面 |
 | [bridge](patterns/structural/bridge.py) | 客戶端提供商中間人，以軟化介面變更 |
 | [composite](patterns/structural/composite.py) | 讓客戶均勻對待個別物件和組合 |
@@ -37,7 +37,7 @@ __結構型模式__:
 | [facade](patterns/structural/facade.py) | 使用一個類別作為許多其他類的 API |
 | [flyweight](patterns/structural/flyweight__py3.py) | 透明地重用具有相似／相同狀態物件的存在實例 |
 | [front_controller](patterns/structural/front_controller.py) | 單一處理程式請求進入應用程式 |
-| [mvc](patterns/structural/mvc.py) | 模型<->視圖<->控制器（非嚴格關係） |
+| [mvc](patterns/structural/mvc.py) | 模型<->視圖<->控制器（非嚴謹關係） |
 | [proxy](patterns/structural/proxy.py) | 一個物件將操作導引到其它東西 |
 
 __行為型模式__:

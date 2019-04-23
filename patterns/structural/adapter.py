@@ -2,33 +2,28 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
-The Adapter pattern provides a different interface for a class. We can
-think about it as a cable adapter that allows you to charge a phone
-somewhere that has outlets in a different shape. Following this idea,
-the Adapter pattern is useful to integrate classes that couldn't be
-integrated due to their incompatible interfaces.
+*這種模式是什麼？
+Adapter 模式為類別提供不同的介面。 我們可以將其視為一種電纜轉接器，
+允許您在具有不同形狀插座的地方為手機充電。 遵循這個想法，
+Adapter 模式對於整和由於其不兼容的介面而無法整合的類別非常有用。
 
-*What does this example do?
+*這個例子做了什麼？
 
-The example has classes that represent entities (Dog, Cat, Human, Car)
-that make different noises. The Adapter class provides a different
-interface to the original methods that make such noises. So the
-original interfaces (e.g., bark and meow) are available under a
-different name: make_noise.
+該範例具有表示發出不同叫聲的實體 (Dog, Cat, Human, Car) 的類別。
+Adapter 類別為產生此類叫聲的原始方法提供了不同的介面。 因此，
+原始接口（例如，bark 和 meow）可以使用不同的名稱：make_noise。
 
-*Where is the pattern used practically?
-The Grok framework uses adapters to make objects work with a
-particular API without modifying the objects themselves:
+*該模式實際使用在哪裡？
+Grok 框架使用轉接器使物件與特定 API，而無需修改物件本身：
 http://grok.zope.org/doc/current/grok_overview.html#adapters
 
-*References:
+*參考：
 http://ginstrom.com/scribbles/2008/11/06/generic-adapter-class-in-python/
 https://sourcemaking.com/design_patterns/adapter
 http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html#adapter
 
 *TL;DR80
-Allows the interface of an existing class to be used as another interface.
+允許將現有類別的介面用作另一個介面。
 """
 
 
@@ -66,23 +61,23 @@ class Car(object):
 
 class Adapter(object):
     """
-    Adapts an object by replacing methods.
-    Usage:
+    通過替換方法來調整物件。
+    用法：
     dog = Dog()
     dog = Adapter(dog, make_noise=dog.bark)
     """
 
     def __init__(self, obj, **adapted_methods):
-        """We set the adapted methods in the object's dict"""
+        """我們在物件的字典中設置了轉接方法"""
         self.obj = obj
         self.__dict__.update(adapted_methods)
 
     def __getattr__(self, attr):
-        """All non-adapted calls are passed to the object"""
+        """所有 未 轉接的調用都將傳遞給物件"""
         return getattr(self.obj, attr)
 
     def original_dict(self):
-        """Print original object dict"""
+        """印出原始物件的字典"""
         return self.obj.__dict__
 
 

@@ -2,33 +2,29 @@
 # -*- coding: utf-8 -*-
 
 """
-Example from https://en.wikipedia.org/wiki/Facade_pattern#Python
+例子來自 https://en.wikipedia.org/wiki/Facade_pattern#Python
 
 
-*What is this pattern about?
-The Facade pattern is a way to provide a simpler unified interface to
-a more complex system. It provides an easier way to access functions
-of the underlying system by providing a single entry point.
-This kind of abstraction is seen in many real life situations. For
-example, we can turn on a computer by just pressing a button, but in
-fact there are many procedures and operations done when that happens
-(e.g., loading programs from disk to memory). In this case, the button
-serves as an unified interface to all the underlying procedures to
-turn on a computer.
+*這種模式是什麼？
+Facade 模式是一種為更複雜的系統提供更簡單統一介面的方法。
+它通過提供單一入口點提供了一種更簡單的方法來訪問底層系統的功能。
+在許多現實生活中都可以看到這種抽象化。
+例如，我們可以通過按下按鈕來打開電腦，但實際上在發生這種情況時會執行許多過程和操作
+（例如，將程式從硬碟讀取到記憶體）。
+在這種情況下，該按鈕用作打開電腦的所有基本程序的統一介面。
 
-*Where is the pattern used practically?
-This pattern can be seen in the Python standard library when we use
-the isdir function. Although a user simply uses this function to know
-whether a path refers to a directory, the system makes a few
-operations and calls other modules (e.g., os.stat) to give the result.
+*該模式實際使用在哪裡？
+當我們使用 isdir 函數時，可以在 Python 標準庫中看到此模式。
+儘管用戶僅使用此函數來知道路徑是否指的是一個目錄，但系統進行一些操作並調用其他模組
+（例如，os.stat）來給出結果。
 
-*References:
+*參考：
 https://sourcemaking.com/design_patterns/facade
 https://fkromer.github.io/python-pattern-references/design/#facade
 http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html#facade
 
 *TL;DR80
-Provides a simpler unified interface to a complex system.
+為複雜系統提供更簡單統一的介面。
 """
 
 from __future__ import print_function
@@ -37,7 +33,7 @@ from __future__ import print_function
 # Complex computer parts
 class CPU(object):
     """
-    Simple CPU representation.
+    簡單的 CPU 表示。
     """
     def freeze(self):
         print("Freezing processor.")
@@ -51,7 +47,7 @@ class CPU(object):
 
 class Memory(object):
     """
-    Simple memory representation.
+    簡單的記憶體表示。
     """
     def load(self, position, data):
         print("Loading from {0} data: '{1}'.".format(position, data))
@@ -59,7 +55,7 @@ class Memory(object):
 
 class SolidStateDrive(object):
     """
-    Simple solid state drive representation.
+    簡單的固態硬碟表示。
     """
     def read(self, lba, size):
         return "Some data from sector {0} with size {1}".format(lba, size)
@@ -67,7 +63,7 @@ class SolidStateDrive(object):
 
 class ComputerFacade(object):
     """
-    Represents a facade for various computer parts.
+    表示各種電腦部件的外觀。
     """
     def __init__(self):
         self.cpu = CPU()

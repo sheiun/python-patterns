@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-Lazily-evaluated property pattern in Python.
+在 Python 中使用延遲評估屬性模式（Lazily-evaluated property pattern）。
 
 https://en.wikipedia.org/wiki/Lazy_evaluation
 
-*References:
+*參考：
 bottle
 https://github.com/bottlepy/bottle/blob/cafc15419cbb4a6cb748e6ecdccf92893bb25ce5/bottle.py#L270
 django
@@ -19,7 +19,7 @@ werkzeug
 https://github.com/pallets/werkzeug/blob/5a2bf35441006d832ab1ed5a31963cbc366c99ac/werkzeug/utils.py#L35
 
 *TL;DR80
-Delays the eval of an expr until its value is needed and avoids repeated evals.
+延遲 expr 的 eval 直到需要它的值並避免重複的 eval。
 """
 
 from __future__ import print_function
@@ -59,7 +59,7 @@ class Person(object):
 
     @lazy_property
     def relatives(self):
-        # Get all relatives, let's assume that it costs much time.
+        # 得到所有親戚，讓我們假設它花費了很多時間。
         relatives = "Many relatives."
         return relatives
 

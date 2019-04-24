@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
+*這種模式是什麼？
 Define a family of algorithms, encapsulate each one, and make them interchangeable.
 Strategy lets the algorithm vary independently from clients that use it.
 

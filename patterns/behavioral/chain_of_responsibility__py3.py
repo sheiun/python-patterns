@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
+*這種模式是什麼？
 
 The Chain of responsibility is an object oriented version of the
 `if ... elif ... elif ... else ...` idiom, with the

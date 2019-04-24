@@ -2,33 +2,28 @@
 # -*- coding: utf-8 -*-
 
 """
-*What is this pattern about?
-This pattern is used when creating an object is costly (and they are
-created frequently) but only a few are used at a time. With a Pool we
-can manage those instances we have as of now by caching them. Now it
-is possible to skip the costly creation of an object if one is
-available in the pool.
-A pool allows to 'check out' an inactive object and then to return it.
-If none are available the pool creates one to provide without wait.
+*這種模式是什麼？
+在創建物件成本高昂（並且經常創建）時使用此模式，但一次只使用少量物件。
+使用 Pool，我們可以通過暫存它們來管理我們現在擁有的那些實例。
+現在，如果池中有可用物件，則可以跳過昂貴的物件創建。
+池允許 'check out' 非活動物件，然後回傳它。如果沒有可用，
+則池創建一個無需等待即可提供。
 
-*What does this example do?
-In this example queue.Queue is used to create the pool (wrapped in a
-custom ObjectPool object to use with the with statement), and it is
-populated with strings.
-As we can see, the first string object put in "yam" is USED by the
-with statement. But because it is released back into the pool
-afterwards it is reused by the explicit call to sample_queue.get().
-Same thing happens with "sam", when the ObjectPool created insided the
-function is deleted (by the GC) and the object is returned.
+*這個例子做了什麼？
+在此範例中，queue.Queue 用於創建池
+（包裝在 with 語句一起使用的自定義 ObjectPool 物件中），並使用字符串填充。
+正如我們所看到的，放入 "yam" 的第一個字符串物件由 with 語句使用。
+但是因為它之後被釋放回池中，所以通過顯式調用 sample_queue.get() 來重用它。
+同樣的事情發生在 "sam" 中，當 ObjectPool 創建時，該函數被刪除（由 GC）並回傳該物件。
 
-*Where is the pattern used practically?
+*該模式實際使用在哪裡？
 
-*References:
+*參考：
 http://stackoverflow.com/questions/1514120/python-implementation-of-the-object-pool-design-pattern
 https://sourcemaking.com/design_patterns/object_pool
 
 *TL;DR80
-Stores a set of initialized objects kept ready to use.
+存儲一組準備好使用的初始化物件。
 """
 
 

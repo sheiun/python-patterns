@@ -31,7 +31,7 @@ class Card(object):
     """The Flyweight"""
 
     # 可能是一個簡單的字典。
-    # 使用 WeakValueDictionary 垃圾蒐集可以回收對象
+    # 使用 WeakValueDictionary 垃圾蒐集可以回收物件
     # 當沒有其他參考時。
     _pool = weakref.WeakValueDictionary()
 

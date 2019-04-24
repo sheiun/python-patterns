@@ -6,7 +6,7 @@
 http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python
 
 *TL;DR80
-將抽象從其實現抽離。
+將抽象從其實現解耦。
 """
 
 

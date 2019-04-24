@@ -2,40 +2,32 @@
 # -*- coding : utf-8 -*-
 
 """
-*What is this pattern about?
-It decouples the creation of a complex object and its representation,
-so that the same process can be reused to build objects from the same
-family.
-This is useful when you must separate the specification of an object
-from its actual representation (generally for abstraction).
+*這種模式是什麼？
+它解耦了複雜物件及其表示的創建，因此可以重用相同的進程來建構來自同一系列的物件。
+當您必須將物件的規範與其實際表示（通常用於抽象）分開時，這非常有用。
 
-*What does this example do?
+*這個例子做了什麼？
+第一個範例通過使用抽象的基本類別來實現此目的，
+其中初始化程式（__init__ 方法）指定所需的步驟
+具體子類別實現這些步驟。
 
-The first example achieves this by using an abstract base
-class for a building, where the initializer (__init__ method) specifies the
-steps needed, and the concrete subclasses implement these steps.
+在其它程式語言中，有時需要更複雜的安排。特別是，你不能在 C++ 的建構子中有多型行為 - 請參閱
+https://stackoverflow.com/questions/1453131/how-can-i-get-polymorphic-behavior-in-a-c-constructor
+ - 這意味著這種 Python 技術不管用。 所需的多型必須由外部的，已經建構的不同類別的實例提供。
 
-In other programming languages, a more complex arrangement is sometimes
-necessary. In particular, you cannot have polymorphic behaviour in a constructor in C++ -
-see https://stackoverflow.com/questions/1453131/how-can-i-get-polymorphic-behavior-in-a-c-constructor
-- which means this Python technique will not work. The polymorphism
-required has to be provided by an external, already constructed
-instance of a different class.
+一般來說，在 Python 中這不是必需的，但也包括顯示這種安排的第二個例子。
 
-In general, in Python this won't be necessary, but a second example showing
-this kind of arrangement is also included.
+*該模式實際使用在哪裡？
 
-*Where is the pattern used practically?
-
-*References:
+*參考：
 https://sourcemaking.com/design_patterns/builder
 
 *TL;DR80
-Decouples the creation of a complex object and its representation.
+解耦複雜物件的建構及其表示方式。
 """
 
 
-# Abstract Building
+# 抽象 Building
 class Building(object):
     def __init__(self):
         self.build_floor()
@@ -51,7 +43,7 @@ class Building(object):
         return 'Floor: {0.floor} | Size: {0.size}'.format(self)
 
 
-# Concrete Buildings
+# 實體 Buildings
 class House(Building):
     def build_floor(self):
         self.floor = 'One'
@@ -68,10 +60,8 @@ class Flat(Building):
         self.size = 'Small'
 
 
-# In some very complex cases, it might be desirable to pull out the building
-# logic into another function (or a method on another class), rather than being
-# in the base class '__init__'. (This leaves you in the strange situation where
-# a concrete class does not have a useful constructor)
+# 在一些非常複雜的情況下，可能需要將建構邏輯拉出到另一個函數中（或方法或其他類別），
+# 而不是在基本類別 '__init__'。 (這使您處於一個奇怪的情況，即具體類別沒有有用的建構子)
 
 
 class ComplexBuilding(object):
@@ -94,14 +84,14 @@ def construct_building(cls):
     return building
 
 
-# Client
+# 客戶端
 if __name__ == "__main__":
     house = House()
     print(house)
     flat = Flat()
     print(flat)
 
-    # Using an external constructor function:
+    # 使用外部建構函數：
     complex_house = construct_building(ComplexHouse)
     print(complex_house)
 

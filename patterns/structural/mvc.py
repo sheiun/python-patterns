@@ -24,7 +24,7 @@ class Model(object):
 
 class ProductModel(Model):
     class Price(float):
-        """一種多形方式用來具有特定 __str__ 功能的浮點數。"""
+        """一種多型方式用來具有特定 __str__ 功能的浮點數。"""
 
         def __str__(self):
             return "{:.2f}".format(self)

@@ -1,31 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""*What is this pattern about?
-A Factory is an object for creating other objects.
+"""*這種模式是什麼？
+Factory 是用於創建其他物件的物件。
 
-*What does this example do?
-The code shows a way to localize words in two languages: English and
-Greek. "get_localizer" is the factory function that constructs a
-localizer depending on the language chosen. The localizer object will
-be an instance from a different class according to the language
-localized. However, the main code does not have to worry about which
-localizer will be instantiated, since the method "localize" will be called
-in the same way independently of the language.
+*這個例子做了什麼？
+該程式顯示了一種用兩種語言本地化單字的方法：英語和希臘語。
+"get_localizer" 是根據所選語言建構本地化的工廠函數。
+根據本地化的語言，localizer 物件將是來自不同類別的實例。
+但是，主程式不必擔心將實例化哪個本地化程式，
+因為 "localize" 方法將以獨立於語言的相同方式調用。
 
-*Where can the pattern be used practically?
-The Factory Method can be seen in the popular web framework Django:
-http://django.wikispaces.asu.edu/*NEW*+Django+Design+Patterns For
-example, in a contact form of a web page, the subject and the message
-fields are created using the same form factory (CharField()), even
-though they have different implementations according to their
-purposes.
+*實際上可以在哪裡使用這種模式？
+工廠方法可以在流行的 Web 框架 Django 中看到：
+http://django.wikispaces.asu.edu/*NEW*+Django+Design+Patterns 
+例如，在網頁的聯繫表單中，主題和訊息字段是使用相同的表單工廠（CharField()）創建的，
+即使它們根據其用途具有不同的實現。
 
-*References:
+*參考：
 http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
 *TL;DR80
-Creates objects without having to specify the exact class.
+無需指定確切的類別即可創建物件。
 """
 
 from __future__ import unicode_literals
@@ -33,25 +29,25 @@ from __future__ import print_function
 
 
 class GreekLocalizer(object):
-    """A simple localizer a la gettext"""
+    """ 一個簡單的本地化和一個 gettext"""
 
     def __init__(self):
         self.translations = {"dog": "σκύλος", "cat": "γάτα"}
 
     def localize(self, msg):
-        """We'll punt if we don't have a translation"""
+        """ 如果我們沒有翻譯，我們會發揮作用 """
         return self.translations.get(msg, msg)
 
 
 class EnglishLocalizer(object):
-    """Simply echoes the message"""
+    """ 簡單地回應訊息 """
 
     def localize(self, msg):
         return msg
 
 
 def get_localizer(language="English"):
-    """Factory"""
+    """ 工廠 """
     localizers = {
         "English": EnglishLocalizer,
         "Greek": GreekLocalizer,
